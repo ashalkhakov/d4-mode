@@ -14,6 +14,9 @@
 		<!--
 		<Import assembly="Alphora.Dataphor.DAE.dll" />
 		-->
+
+		<Import file="templates/EmptyD4File.xft.xml"/>
+		<Import file="templates/EmptyD4Library.xpt.xml"/>
 	</Runtime>
 
 	<Dependencies>
@@ -57,16 +60,33 @@
 		<MimeType id="text/x-d4l" _description="D4 Library File" icon="md-file-source" isText="true">
 			<File pattern="*.d4l" />
 		</MimeType>-->
+	    <MimeType id="application/d4project+xml" _description="D4 project file" baseType="application/xml">
+	      <File pattern="*.d4proj" />
+	    </MimeType>
 	</Extension>
-<!--		
+
 	<Extension path="/MonoDevelop/Ide/FileTemplateTypes">
 		<FileTemplateType name="D4File" class="MonoDevelop.D4Binding.templates.D4FileDescriptionTemplate"/>
 	</Extension>
-	<Extension path="/MonoDevelop/ProjectModel/ProjectBindings">
-		<ProjectBinding id="D4Project" class="MonoDevelop.D4Binding.D4ProjectBinding"/>
+
+	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject
+			language="D4"
+			extension="d4proj"
+			guid="{75e974c8-1b2d-48e9-8d88-aecd6db674cd}"
+			resourceHandler="MonoDevelop.D4Binding.D4ResourceIdBuilder"/>
 	</Extension>
 
+  <Extension path = "/MonoDevelop/ProjectModel/ProjectServiceExtensions">
+    <Class class = "MonoDevelop.D4Binding.D4ProjectServiceExtension" />
+  </Extension>
+<!--
+  <Extension path = "/MonoDevelop/Ide/Pads/ProjectPad">
+    <NodeBuilder class = "MonoDevelop.D4Binding.D4ProjectFileNodeExtension"/>
+  </Extension>-->
+
 	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
-		<DataType class="MonoDevelop.D4Binding.D4Project" />
-	</Extension>-->
+		<DataType class="MonoDevelop.D4Binding.D4ProjectConfiguration" />
+	</Extension>
+
 </Addin>

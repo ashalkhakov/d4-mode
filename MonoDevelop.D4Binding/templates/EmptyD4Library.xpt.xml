@@ -11,9 +11,29 @@
                 <LanguageName>D4</LanguageName>
                 <_Description>Creates an empty D4 solution.</_Description>
 	</TemplateConfiguration>
-	
+
+	<Actions>
+		<Open filename = "Documents/Register.d4"/>
+	</Actions>
+
 	<!-- Template Content -->
 	<Combine name = "${ProjectName}" directory = ".">
-		<Project name = "${ProjectName}" directory = "."/>
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+
+		<Project name = "${ProjectName}" directory = ".">
+			<Options Target="Library" TargetFrameworkVersion="4.0" PauseConsole="false" />
+			<References>
+				<Reference type="Package" refto="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		        <Reference type="Package" refto="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		        <Reference type="Package" refto="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			</References>
+			<Files>
+				<Directory name="Documents">
+					<File name="Register.d4" src="Register.d4"/>
+				</Directory>
+			</Files>
+		</Project>
 	</Combine>
 </Template>

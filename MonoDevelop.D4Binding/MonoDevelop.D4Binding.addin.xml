@@ -1,0 +1,42 @@
+﻿<Addin
+	id="D4Binding"
+	namespace="MonoDevelop"
+	name="D4 Language Binding"
+	author="Artyom Shalkhakov"
+	copyright="MIT/X11"
+	url="http://abitech.kz"
+	description="D4 IDE"
+	category="Language bindings" version="0.0.1">
+
+	<Runtime>
+		<Import file="D4SyntaxMode.xml"/>
+	</Runtime>
+
+	<Dependencies>
+		<Addin id="Core" version="4.0" />
+		<Addin id="SourceEditor2" version = "4.0" />
+		<Addin id="::MonoDevelop.Ide" version="4.0"/>
+	</Dependencies>
+
+	<!-- doesn't seem to work -->
+	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
+		<Templates
+			resource="MonoDevelop.D4Binding.D4SyntaxMode.xml"/>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
+		<LanguageBinding
+			id = "D4"
+			supportedextensions = ".d4,.d4l"
+			class = "MonoDevelop.D4Binding.D4LanguageBinding" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/FileFilters">
+		<FileFilter id="D4" insertbefore="AllFiles" _label="D4 Source Files" extensions="*.d4"/>
+	</Extension>
+	<Extension path="/MonoDevelop/Core/MimeTypes">
+		<MimeType id="text/x-d4" _description="D4 Source File" icon="md-file-source" isText="true">
+			<File pattern="*.d4" />
+		</MimeType>
+	</Extension>
+</Addin>

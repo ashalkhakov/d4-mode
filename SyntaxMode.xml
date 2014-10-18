@@ -1,0 +1,20 @@
+<SyntaxMode name="D4" mimeTypes="text/x-d4">
+  <Keywords color="keyword.selection">
+    <Word>if</Word>
+    <Word>over</Word>
+    <Word>then</Word>
+    <Word>by</Word>
+    <Word>where</Word>
+  </Keywords>
+
+  <Property name="LineComment">//</Property>  
+  <Property name="BlockCommentStart">/*</Property>  
+  <Property name="BlockCommentEnd">*/</Property>  
+  <Property name="StringQuote">"</Property>  
+  <Property name="StringQuote">'</Property>
+
+  <Span color = "comment.block" rule="Comment" tagColor="comment.tag.block">
+     <Begin>/*</Begin>  
+     <End>*/</End>  
+  </Span>
+</SyntaxMode>

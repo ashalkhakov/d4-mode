@@ -1,0 +1,12 @@
+<AddinProject appVersion="3.0">
+  <Project platforms="Mac Linux">
+    <AddinFile>MonoDevelop.D4Binding/MonoDevelop.D4/bin/Debug/D4Binding.dll</AddinFile>
+    <BuildFile>MonoDevelop.D4Binding/MonoDevelop.D4.sln</BuildFile>
+    <BuildConfiguration>Debug</BuildConfiguration>
+  </Project>
+  <Project platforms="Win32">
+    <AddinFile>bin/D4Binding.dll</AddinFile>
+    <BuildFile>MonoDevelop.D4Binding/D4.MonoDevelop.sln</BuildFile>
+    <BuildConfiguration>Debug</BuildConfiguration>
+  </Project>
+</AddinProject>

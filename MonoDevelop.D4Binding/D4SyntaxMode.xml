@@ -1,0 +1,356 @@
+﻿<!-- D4SyntaxMode.xml
+
+ Author:
+   Mike Krüger <mkrueger@novell.com>
+   Dave Thomas
+   Artyom Shalkhakov <artyom.shalkhakov@gmail.com>
+
+ Copyright (c) 2007 Novell, Inc (http://www.novell.com)
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE. -->
+
+<SyntaxMode name="D4" mimeTypes="text/x-d4">
+  <Property name="LineComment">//</Property>
+  <Property name="BlockCommentStart">/*</Property>
+  <Property name="BlockCommentEnd">*/</Property>
+  <Property name="StringQuote">"</Property>
+  <Property name="StringQuote">'</Property>
+  
+  <EolSpan color="Comment(Doc)" rule="XmlDocumentation" tagColor="Comment(Line)">///</EolSpan>
+  <EolSpan color="Comment(Line)" rule="Comment" tagColor="Comment(Line)">//</EolSpan>
+
+  <Span color="Comment(Block)" rule="MultiComment" tagColor="Comment(Line)" stopateol="false">
+    <Begin>/*</Begin>
+    <End>*/</End>
+  </Span>
+
+  <Span color="String" rule="String" stopateol="false" escape='""'>
+    <Begin>"</Begin>
+    <End>"</End>
+  </Span>
+
+  <Span color="String" rule="String" stopateol="false" escape="''">
+    <Begin>&apos;</Begin>
+    <End>&apos;</End>
+  </Span>
+
+  <Match color="Number">CSharpNumber</Match>
+
+  <Keywords color = "Punctuation">
+  	<Word>+</Word> <!-- Addition -->
+  	<Word>-</Word> <!-- Subtraction -->
+  	<Word>/</Word> <!-- Division -->
+  	<Word>*</Word> <!-- Multiplication -->
+  	<Word>**</Word> <!-- Power -->
+
+  	<Word>:=</Word> <!-- Assign -->
+  	<Word>?=</Word> <!-- Compare -->
+
+  	<Word>&amp;</Word> <!-- BitwiseAnd -->
+  	<Word>~</Word> <!-- BitwiseNot -->
+	<Word>|</Word> <!-- BitwiseOr -->
+	<Word>^</Word> <!-- BitwiseXor -->
+	<Word>&lt;&lt;</Word> <!-- ShiftLeft -->
+	<Word>&gt;&gt;</Word> <!-- ShiftRight -->
+
+	<Word>=</Word> <!-- Equal -->
+	<Word>&gt;</Word> <!-- Greater -->
+	<Word>&gt;=</Word> <!-- InclusiveGreater -->
+	<Word>&lt;=</Word> <!-- InclusiveLess -->
+	<Word>&lt;</Word> <!-- Less -->
+	<Word>&lt;&gt;</Word> <!-- NotEqual -->
+
+	<Word>,</Word> <!-- ListSeparator -->
+	<Word>.</Word> <!-- Qualifier -->
+	<Word>;</Word> <!-- StatementTerminator -->
+	<Word>:</Word> <!-- TypeSpecifier -->
+  </Keywords>
+
+  <Keywords color = "Punctuation(Brackets)">
+	<Word>(</Word>	<!-- BeginGroup -->
+	<Word>[</Word> <!-- BeginIndexer -->          
+	<Word>{</Word> <!-- BeginList -->                   
+	<Word>)</Word> <!-- EndGroup -->                    
+	<Word>]</Word> <!-- EndIndexer -->                  
+	<Word>}</Word> <!-- EndList -->                     
+  </Keywords>
+
+  <Keywords color="Keyword(Jump)">
+  	<Word>break</Word>
+  	<Word>continue</Word>
+  	<Word>exit</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Iteration)">
+  	<Word>for</Word>
+  	<Word>do</Word>
+  	<Word>to</Word>
+  	<Word>downto</Word>
+  	<Word>while</Word>
+  	<Word>foreach</Word>
+
+  	<Word>begin</Word>
+  	<Word>end</Word>
+  	<Word>add</Word>
+  	<Word>adorn</Word>
+  	<Word>after</Word>
+  	<Word>aggregate</Word>
+  	<Word>aggregation</Word>
+  	<Word>all</Word>
+  	<Word>alter</Word>
+  	<Word>and</Word>
+  	<Word>apply</Word>
+  	<Word>as</Word>
+  	<Word>asc</Word>
+  	<Word>attach</Word>
+  	<Word>attributes</Word>
+  	<Word>bag</Word>
+  	<Word>before</Word>
+  	<Word>between</Word>
+  	<Word>browse</Word>
+  	<Word>by</Word>
+  	<Word>capabilities</Word>
+  	<Word>cascade</Word>
+  	<Word>change</Word>
+  	<Word>class</Word>
+  	<Word>clear</Word>
+  	<Word>column</Word>
+  	<Word>commit</Word>
+  	<Word>constraint</Word>
+	<Word>conversion</Word>
+	<Word>create</Word>
+	<Word>cursor</Word>
+	<Word>default</Word>
+	<Word>delete</Word>
+	<Word>desc</Word>
+	<Word>detach</Word>
+	<Word>device</Word>
+	<Word>distinct</Word>
+	<Word>div</Word>
+	<Word>divide</Word>
+	<Word>drop</Word>
+	<Word>dynamic</Word>
+	<Word>exclude</Word>
+	<Word>exists</Word>
+	<Word>explode</Word>
+	<Word>finalization</Word>
+	<Word>from</Word>
+	<Word>grant</Word>
+	<Word>group</Word>
+	<Word>having</Word>
+	<Word>include</Word>
+	<Word>index</Word>
+	<Word>indexes</Word>
+	<Word>inherited</Word>
+	<Word>initialization</Word>
+	<Word>insert</Word>
+	<Word>intersect</Word>
+	<Word>into</Word>
+	<Word>invoke</Word>
+	<Word>is</Word>
+	<Word>isolation</Word>
+	<Word>join</Word>
+	<Word>key</Word>
+	<Word>left</Word>
+	<Word>level</Word>
+	<Word>like</Word>
+	<Word>list</Word>
+	<Word>lookup</Word>
+	<Word>master</Word>
+	<Word>matches</Word>
+	<Word>minus</Word>
+	<Word>minus</Word>
+	<Word>mod</Word>
+	<Word>mode</Word>
+	<Word>modify</Word>
+	<Word>narrowing</Word>
+	<Word>not</Word>
+	<Word>of</Word>
+	<Word>on</Word>
+	<Word>operator</Word>
+	<Word>or</Word>
+	<Word>order</Word>
+	<Word>origin</Word>
+	<Word>over</Word>
+	<Word>read</Word>
+	<Word>reconciliation</Word>
+	<Word>recursively</Word>
+	<Word>redefine</Word>
+	<Word>reference</Word>
+	<Word>references</Word>
+	<Word>remove</Word>
+	<Word>rename</Word>
+	<Word>repeat</Word>
+	<Word>representation</Word>
+	<Word>require</Word>
+	<Word>result</Word>
+	<Word>return</Word>
+	<Word>revert</Word>
+	<Word>revoke</Word>
+	<Word>right</Word>
+	<Word>role</Word>
+	<Word>row</Word>
+	<Word>rowexists</Word>
+	<Word>scalar</Word>
+	<Word>select</Word>
+	<Word>server</Word>
+	<Word>selector</Word>
+	<Word>sequence</Word>
+	<Word>session</Word>
+	<Word>set</Word>
+	<Word>sort</Word>
+	<Word>source</Word>
+	<Word>special</Word>
+	<Word>static</Word>
+	<Word>step</Word>
+	<Word>store</Word>
+	<Word>table</Word>
+	<Word>tags</Word>
+	<Word>target</Word>
+	<Word>times</Word>
+	<Word>transition</Word>
+	<Word>type</Word>
+	<Word>typeof</Word>
+	<Word>union</Word>
+	<Word>until</Word>
+	<Word>update</Word>
+	<Word>usage</Word>
+	<Word>user</Word>
+	<Word>users</Word>
+	<Word>using</Word>
+	<Word>validate</Word>
+	<Word>view</Word>
+	<Word>where</Word>
+	<Word>widening</Word>
+	<Word>with</Word>
+	<Word>without</Word>
+	<Word>write</Word>
+	<Word>xor</Word>
+	<Word>abstract</Word>
+	<Word>virtual</Word>
+	<Word>override</Word>
+	<Word>reintroduce</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Exception)">
+  	<Word>try</Word>
+  	<Word>except</Word>
+  	<Word>finally</Word>
+  	<Word>raise</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Constants)">
+	<Word>nil</Word>
+	<Word>true</Word>
+	<Word>false</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Parameter)">
+  	<Word>in</Word> <!-- also binary op -->
+  	<Word>var</Word> <!-- also binding -->
+  	<Word>const</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Access)">
+	<Word>new</Word>
+	<Word>old</Word>
+	<Word>parent</Word>
+	<Word>value</Word>
+  </Keywords>
+
+  <Keywords color="Keyword(Selection)">
+	<Word>else</Word>
+	<Word>if</Word>
+	<Word>then</Word>
+	<Word>case</Word>
+	<Word>when</Word>
+  </Keywords>
+
+  <!--
+		// Keyword(Type)
+		// Boolean, Integer, Decimal, String, Double, Graphic, Binary
+	<Word>generic</Word>
+
+		// Keyword(Declaration)
+  -->
+		
+  <Rule name="Comment">
+    <Keywords color="Comment Tag" ignorecase="True">
+      <Word>TODO</Word>
+      <Word>FIXME</Word>
+      <Word>HACK</Word>
+      <Word>UNDONE</Word>
+    </Keywords>
+  </Rule>
+
+  <Rule name="MultiComment">
+    <Span color="Comment(Block)" rule="MultiComment" tagColor="comment.tag.block">
+        <Begin>/*</Begin>
+        <End>*/</End>
+    </Span>
+
+    <Keywords color="Comment Tag" ignorecase="True">
+      <Word>TODO</Word>
+      <Word>FIXME</Word>
+      <Word>HACK</Word>
+      <Word>UNDONE</Word>
+    </Keywords>
+  </Rule>
+
+  <Rule name="String">
+  </Rule>
+
+  <Rule name="XmlDocumentation">
+    <Span color="comment" rule="XmlDocumentationTag" stopateol="true" >
+      <Begin>&lt;</Begin>
+      <End>&gt;</End>
+    </Span>
+  </Rule>
+
+  <Rule name="XmlDocumentationTag">
+    <Span color="String" stopateol="true" escape="\" rule="String" >
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Keywords color="Comment(DocTag)">
+      <Word>c</Word>
+      <Word>code</Word>
+      <Word>example</Word>
+      <Word>exception</Word>
+      <Word>list</Word>
+      <Word>para</Word>
+      <Word>param</Word>
+      <Word>paramref</Word>
+      <Word>permission</Word>
+      <Word>remarks</Word>
+      <Word>returns</Word>
+      <Word>see</Word>
+      <Word>seealso</Word>
+      <Word>summary</Word>
+      <Word>value</Word>
+      <Word>type</Word>
+      <Word>name</Word>
+      <Word>cref</Word>
+      <Word>item</Word>
+      <Word>term</Word>
+      <Word>description</Word>
+      <Word>listheader</Word>
+    </Keywords>
+  </Rule>
+</SyntaxMode>

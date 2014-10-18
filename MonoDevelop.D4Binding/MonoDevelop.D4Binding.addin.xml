@@ -47,7 +47,7 @@
 			<File pattern="*.d4l" />
 		</MimeType>
 	</Extension>
-<!--
+
 	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
 		<ProjectTemplate id="D4Library" resource="MonoDevelop.D4Binding.templates.Library.xpt.xml"/>
 	</Extension>
@@ -57,5 +57,5 @@
 
 	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class="MonoDevelop.D4Binding.D4Project" />
-	</Extension>-->
+	</Extension>
 </Addin>

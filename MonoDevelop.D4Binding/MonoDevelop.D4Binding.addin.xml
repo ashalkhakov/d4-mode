@@ -9,27 +9,32 @@
 	category="Language bindings" version="0.0.1">
 
 	<Runtime>
-		<Import file="D4SyntaxMode.xml"/>
+	  <Import file="D4SyntaxMode.xml"/>
+	  <Import assembly="MonoDevelop.D4Binding.dll"/>
+		<!--
+		<Import assembly="Alphora.Dataphor.DAE.dll" />
+		-->
 	</Runtime>
 
 	<Dependencies>
-		<Addin id="Core" version="4.0" />
-		<Addin id="SourceEditor2" version = "4.0" />
-		<Addin id="::MonoDevelop.Ide" version="4.0"/>
+		<Addin id="Ide" version="4.3"/>
+		<Addin id="Core" version="4.3" />
+		<Addin id="SourceEditor2" version = "4.3" />
 	</Dependencies>
 
-	<!-- doesn't seem to work -->
-	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
-		<Templates
-			resource="MonoDevelop.D4Binding.D4SyntaxMode.xml"/>
+	<Extension path="/MonoDevelop/SourceEditor2/CustomModes">
+		<SyntaxMode mimeTypes="text/x-d4" class="MonoDevelop.D4Binding.D4SyntaxMode"/>
 	</Extension>
-
-	<Extension path = "/MonoDevelop/ProjectModel/LanguageBindings">
+	<Extension path="/MonoDevelop/ProjectModel/LanguageBindings">
 		<LanguageBinding
 			id = "D4"
 			supportedextensions = ".d4,.d4l"
 			class = "MonoDevelop.D4Binding.D4LanguageBinding" />
 	</Extension>
+<!--
+	<Extension path="/MonoDevelop/TypeSystem/Parser">
+		<Parser class="MonoDevelop.D4Binding.D4Parser" mimeType="text/x-d4" />
+	</Extension>-->
 
 	<Extension path="/MonoDevelop/Ide/FileFilters">
 		<FileFilter id="D4" insertbefore="AllFiles" _label="D4 Source Files" extensions="*.d4"/>
@@ -38,5 +43,19 @@
 		<MimeType id="text/x-d4" _description="D4 Source File" icon="md-file-source" isText="true">
 			<File pattern="*.d4" />
 		</MimeType>
+		<MimeType id="text/x-d4l" _description="D4 Library File" icon="md-file-source" isText="true">
+			<File pattern="*.d4l" />
+		</MimeType>
 	</Extension>
+<!--
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate id="D4Library" resource="MonoDevelop.D4Binding.templates.Library.xpt.xml"/>
+	</Extension>
+	<Extension path="/MonoDevelop/ProjectModel/ProjectBindings">
+		<ProjectBinding id="D4Project" class="MonoDevelop.D4Binding.D4ProjectBinding"/>
+	</Extension>
+
+	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
+		<DataType class="MonoDevelop.D4Binding.D4Project" />
+	</Extension>-->
 </Addin>

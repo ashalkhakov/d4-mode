@@ -282,11 +282,32 @@
 	<Word>when</Word>
   </Keywords>
 
-  <!--
-		// Keyword(Type)
-		// Boolean, Integer, Decimal, String, Double, Graphic, Binary
+  <Keywords color="Keyword(Type)">
+  	<Word>Boolean</Word>
+  	<Word>System.Boolean</Word>
+  	<Word>.System.Boolean</Word>
+  	<Word>Integer</Word>
+  	<Word>System.Integer</Word>
+  	<Word>.System.Integer</Word>
+  	<Word>Decimal</Word>
+  	<Word>System.Decimal</Word>
+  	<Word>.System.Decimal</Word>
+  	<Word>String</Word>
+  	<Word>System.String</Word>
+  	<Word>.System.String</Word>
+  	<Word>Double</Word>
+  	<Word>System.Double</Word>
+  	<Word>.System.Double</Word>
+  	<Word>Graphic</Word>
+  	<Word>System.Graphic</Word>
+  	<Word>.System.Graphic</Word>
+  	<Word>Binary</Word>
+  	<Word>System.Binary</Word>
+  	<Word>.System.Binary</Word>
 	<Word>generic</Word>
+  </Keywords>
 
+	<!--
 		// Keyword(Declaration)
   -->
 		

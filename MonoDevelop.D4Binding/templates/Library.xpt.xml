@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template originator="Artyom Shalkhakov">
+	<TemplateConfiguration>
+		<_Name>D4 Library Project</_Name>
+		<_Category>D4</_Category>
+		<LanguageName>D4</LanguageName>
+		<_Description>Creates a D4 library</_Description>
+	</TemplateConfiguration>
+
+	<Combine name="${ProjectName}" directory=".">
+		<Project name="${ProjectName}" directory="." type="D4">
+			<Options
+					Target="SharedLibrary"
+					PauseConsoleOutput="True"
+					CompilerArgs=""
+					LinkerArgs=""/>
+			<Files>
+				<D4File name="Register.d4">
+				</D4File>
+				<D4LFile name="${ProjectName}.d4l">
+				</D4LFile>
+			</Files>
+		</Project>
+	</Combine>
+</Template>

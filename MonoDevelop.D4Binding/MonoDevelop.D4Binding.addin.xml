@@ -39,17 +39,28 @@
 	<Extension path="/MonoDevelop/Ide/FileFilters">
 		<FileFilter id="D4" insertbefore="AllFiles" _label="D4 Source Files" extensions="*.d4"/>
 	</Extension>
+	<Extension path="/MonoDevelop/Ide/FileTemplates">
+		<FileTemplate id="EmptyD4File"
+			file="templates/EmptyD4File.xft.xml"/>
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate
+			id="D4Library"
+			file="templates/EmptyD4Library.xpt.xml"/>
+	</Extension>
+
 	<Extension path="/MonoDevelop/Core/MimeTypes">
 		<MimeType id="text/x-d4" _description="D4 Source File" icon="md-file-source" isText="true">
 			<File pattern="*.d4" />
 		</MimeType>
+<!--
 		<MimeType id="text/x-d4l" _description="D4 Library File" icon="md-file-source" isText="true">
 			<File pattern="*.d4l" />
-		</MimeType>
+		</MimeType>-->
 	</Extension>
-
-	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
-		<ProjectTemplate id="D4Library" resource="MonoDevelop.D4Binding.templates.Library.xpt.xml"/>
+<!--		
+	<Extension path="/MonoDevelop/Ide/FileTemplateTypes">
+		<FileTemplateType name="D4File" class="MonoDevelop.D4Binding.templates.D4FileDescriptionTemplate"/>
 	</Extension>
 	<Extension path="/MonoDevelop/ProjectModel/ProjectBindings">
 		<ProjectBinding id="D4Project" class="MonoDevelop.D4Binding.D4ProjectBinding"/>
@@ -57,5 +68,5 @@
 
 	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
 		<DataType class="MonoDevelop.D4Binding.D4Project" />
-	</Extension>
+	</Extension>-->
 </Addin>

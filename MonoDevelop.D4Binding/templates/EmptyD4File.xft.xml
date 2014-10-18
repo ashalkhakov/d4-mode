@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template
+	Originator="Artyom Shalkhakov"
+	Language="D4"
+	Created="18/10/2014"
+	LastModified="18/10/2014">
+
+	<TemplateConfiguration>
+	    <_Name>Empty D4 File</_Name>
+	    <Icon>md-text-file-icon</Icon>
+	    <_Category>General</_Category>
+	    <LanguageName>D4</LanguageName>
+	    <_Description>Creates an empty D4 file.</_Description>
+	</TemplateConfiguration>
+	
+	<TemplateFiles>
+        <File DefaultExtension=".d4" DefaultName="EmptyD4File">
+			<![CDATA[// created on ${Date} at ${Time}]]>
+		</File>
+	</TemplateFiles>
+	
+	<FileOptions/>
+
+</Template>

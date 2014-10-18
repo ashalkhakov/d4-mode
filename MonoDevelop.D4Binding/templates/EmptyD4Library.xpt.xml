@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<Template originator   = "Artyom Shalkhakov" 
+          created      = "18/10/2014"
+          lastModified = "18/10/2014">
+	
+	<!-- Template Header -->
+	<TemplateConfiguration>
+                <_Name>Empty D4 Library</_Name>
+                <_Category>D4</_Category>
+                <Icon>md-project|res:csharp-icon-32.png</Icon>
+                <LanguageName>D4</LanguageName>
+                <_Description>Creates an empty D4 solution.</_Description>
+	</TemplateConfiguration>
+	
+	<!-- Template Content -->
+	<Combine name = "${ProjectName}" directory = ".">
+		<Project name = "${ProjectName}" directory = "."/>
+	</Combine>
+</Template>

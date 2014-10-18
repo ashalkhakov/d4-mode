@@ -53,22 +53,25 @@
     <Compile Include="D4SyntaxMode.cs" />
     <Compile Include="D4ProjectBinding.cs" />
     <Compile Include="D4Project.cs" />
+    <Compile Include="templates\D4FileDescriptionTemplate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Content Include="MonoDevelop.D4Binding.addin.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="templates\EmptyD4File.xft.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\EmptyD4Library.xpt.xml">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="D4SyntaxMode.xml">
       <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="templates\Library.xpt.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <LogicalName>MonoDevelop.D4Binding.Library.xpt.xml</LogicalName>
-      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
